@@ -1,7 +1,7 @@
 {
   "name": "zmq-request",
-  "version": "0.2.0",
-  "description": "zeromq REQ with throwaway socket and Promise response",
+  "version": "0.2.1",
+  "description": "zeromq REQ with renewed socket and Promise response",
   "main": "index.js",
   "scripts": {
     "test": "mocha test"

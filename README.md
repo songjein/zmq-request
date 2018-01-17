@@ -1,12 +1,10 @@
-zeromq REQ with throwaway socket and Promise response
+__zeromq REQ with renewed socket and Promise response__
 
-This package wraps a REQ request of the [zeromq](https://www.npmjs.com/package/zeromq) package, using one socket per request and a Promise reply.
+This package wraps a REQ socket from the [zeromq](https://www.npmjs.com/package/zeromq) package.
 
-In the [zeromq](https://www.npmjs.com/package/zeromq) package, one is tempted to open a REQ socket and make many requests from it, but this is not how REQ/REP works on 0MQ.
+Reusing the same REQ socket for repeating requests in an async environment (Node.js) is not easy, as 0MQ requires to read the reply before sending a new one.
 
-One should read the reply before sending another request, but this is not pratical in an event-loop context like NodeJS.
-
-This package opens a new socket, sends the request, waits the reply, closes the socket and resolves the Promise.
+This package opens a new socket, sends the request, waits for the reply, closes the socket and resolves the Promise.
 
 ```javascript
 const
@@ -39,13 +37,13 @@ rep.on('message', raw => rep.send(raw));
 
 const request = new Request({ port: 3000 });
 Promise.all([
-  request.send({ ok: 1 }),
-  request.send({ ok: 2 }),
-  request.send({ ok: 3 }),
-  request.send({ ok: 4 }),
-  request.send({ ok: 5 })
+  request.send({ data: 1 }),
+  request.send({ data: 2 }),
+  request.send({ data: 3 }),
+  request.send({ data: 4 }),
+  request.send({ data: 5 })
 ])
-  .then(log)  // [ { ok: 1 }, { ok: 2 }, { ok: 3 }, { ok: 4 }, { ok: 5 } ]
+  .then(log)  // [ { data: 1 }, { data: 2 }, { data: 3 }, { data: 4 }, { data: 5 } ]
   .catch(log)
   .then(() => rep.close());
 ```
