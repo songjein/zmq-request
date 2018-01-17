@@ -1,0 +1,1 @@
+zeromq REQ with throwaway socket and Promise response

@@ -1,0 +1,23 @@
+{
+  "name": "zmq-request",
+  "version": "0.1.0",
+  "description": "zeromq REQ with throwaway socket and Promise response",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ej-santoemma/zmq-request.git"
+  },
+  "author": "ej.santoemma@gmail.com",
+  "license": "MIT",
+  "keywords": [
+    "zeromq", "zmq", "0mq", "ømq", "libzmq", "promise", "request", "then", "thenable"
+  ],
+  "dependencies": {
+    "delay": "^2.0.0",
+    "should": "^13.2.0",
+    "zeromq": "^4.6.0"
+  }
+}
