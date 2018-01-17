@@ -1,6 +1,6 @@
 {
   "name": "zmq-request",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "zeromq REQ with throwaway socket and Promise response",
   "main": "index.js",
   "scripts": {
@@ -16,8 +16,10 @@
     "zeromq", "zmq", "0mq", "ømq", "libzmq", "promise", "request", "then", "thenable"
   ],
   "dependencies": {
-    "delay": "^2.0.0",
-    "should": "^13.2.0",
     "zeromq": "^4.6.0"
+  },
+  "devDependencies": {
+    "delay": "^2.0.0",
+    "should": "^13.2.0"
   }
 }
