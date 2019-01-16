@@ -2,7 +2,6 @@ const
   assert = require('assert'),
   delay = require('delay'),
   Request = require('../'),
-  should = require('should'),
   zmq = require('zeromq');
 
 describe('Basic connection', () => {
@@ -62,7 +61,7 @@ describe('Basic connection', () => {
       .catch(done);
   });
 
-  it('should send a lot of parallel requests', done => {
+  it('should send 500 parallel requests', done => {
     const request = new Request({ port: 3000 });
     const rs = [];
     for (let i = 0; i < 500; i++)

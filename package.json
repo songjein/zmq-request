@@ -13,13 +13,16 @@
   "author": "ej.santoemma@gmail.com",
   "license": "MIT",
   "keywords": [
-    "zeromq", "zmq", "0mq", "ømq", "libzmq", "promise", "request", "then", "thenable"
+    "zeromq",
+    "zmq",
+    "promise",
+    "request"
   ],
   "dependencies": {
-    "zeromq": "^4.6.0"
+    "zeromq": "^5.1.0"
   },
   "devDependencies": {
-    "delay": "^2.0.0",
-    "should": "^13.2.0"
+    "delay": "^4.1.0",
+    "mocha": "^5.2.0"
   }
 }
